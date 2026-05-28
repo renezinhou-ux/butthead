@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #0A0A0B; /* Primary background as requested */
+  --color-slate-900: #111214; /* Card background as requested */
+  --color-slate-800: #1E1F24; /* Border color as requested */
+  --color-slate-750: #25262C;
+  --color-slate-700: #2F313A;
+  --color-slate-600: #464856;
+  --color-slate-500: #8B93A7; /* Text secondary as requested */
+  --color-slate-400: #A8B1C6;
+  --color-slate-300: #CED5E5;
+  --color-slate-200: #E6EBF8;
+  --color-slate-100: #F5F7FA; /* Text primary as requested */
+
+  --color-indigo-950: #0D091F;
+  --color-indigo-900: #140E31;
+  --color-indigo-800: #24175B;
+  --color-indigo-700: #573EBF;
+  --color-indigo-600: #7C5CFF; /* Primary brand color as requested */
+  --color-indigo-500: #9378FF;
+  --color-indigo-400: #AA95FF;
+  --color-indigo-300: #C2B3FF;
+  --color-indigo-200: #D9D1FF;
+  --color-indigo-100: #F0EBFF;
+
+  --color-emerald-500: #00D97E; /* Success brand color as requested */
+  --color-emerald-400: #26E694;
+  --color-emerald-600: #00B368;
+
+  --color-amber-500: #FFB020; /* Warning brand color as requested */
+  --color-amber-400: #FFC04D;
+  --color-amber-600: #DB9211;
+
+  --color-red-500: #FF4D6D; /* Danger brand color as requested */
+  --color-red-400: #FF708A;
+  --color-red-600: #E63554;
+
+  --font-sans: "Inter", "General Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Clash Display", "Satoshi", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --shadow-glow: 0 0 20px rgba(124, 92, 255, 0.35);
+  --shadow-glow-success: 0 0 20px rgba(0, 217, 126, 0.3);
+  --shadow-glow-danger: 0 0 20px rgba(255, 77, 109, 0.3);
+  --shadow-glow-premium: 0 0 35px rgba(124, 92, 255, 0.12);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(124, 92, 255, 0.3);
+  }
+  50% {
+    opacity: .9;
+    transform: scale(1.02);
+    box-shadow: 0 0 24px rgba(124, 92, 255, 0.55);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.glow-purple {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-success {
+  box-shadow: var(--shadow-glow-success);
+}
+
+.glow-premium-card {
+  box-shadow: var(--shadow-glow-premium);
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(124, 92, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 92, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.blur-modal {
+  backdrop-filter: blur(14px);
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E1F24;
+  border-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #25262C;
+}
+
+/* Glassmorphism styling */
+.glass-panel {
+  background: rgba(17, 18, 20, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 31, 36, 0.82);
+}
+
+/* Modern styling tweaks */
+input, select, textarea {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #7C5CFF !important;
+  box-shadow: 0 0 10px rgba(124, 92, 255, 0.15);
+}
+
+/* Skeleton loader effect */
+.skeleton-loading {
+  background: linear-gradient(90deg, #111214 25%, #1e1f24 50%, #111214 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Font helpers */
+.font-display {
+  font-family: var(--font-display);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Butthead",
+  "description": "Painel de CRM e inteligência operacional para controle e monitoramento de chatbots de IA do Ohm.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
